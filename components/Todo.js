@@ -28,7 +28,7 @@ class Todo {
       .cloneNode(true);
 
     const todoNameEl = this._todoElement.querySelector(".todo__name");
-    const todoDate = this._todoElement.querySelector(".todo__date");
+    const todoDateEl = this._todoElement.querySelector(".todo__date");
 
     this._todoDeleteBtn = this._todoElement.querySelector(".todo__delete-btn");
 
@@ -36,7 +36,7 @@ class Todo {
 
     const dueDate = new Date(this._data.date);
     if (!isNaN(dueDate)) {
-      todoDate.textContent = `Due: ${dueDate.toLocaleString("en-US", {
+      todoDateEl.textContent = `Due: ${dueDate.toLocaleString("en-US", {
         year: "numeric",
         month: "short",
         day: "numeric",
