@@ -25,8 +25,9 @@ const addTodoPopup = new PopupWithForm({
     const id = uuidv4();
     const values = { name, date, id };
 
-    renderTodo(values);
-    todocounter.updateTotal(true);
+    section.addItem(generateTodo(values));
+
+    todoCounter.updateTotal(true);
     newTodoValidator.resetValidation();
     addTodoPopup.close();
   },
@@ -60,11 +61,6 @@ function handleDelete(completed) {
 }
 
 section.renderItems();
-
-const renderTodo = (data) => {
-  const todoElement = generateTodo(data);
-  section.addItem(todoElement);
-};
 
 addTodoButton.addEventListener("click", () => {
   addTodoPopup.open();
