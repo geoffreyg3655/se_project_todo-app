@@ -50,11 +50,11 @@ const generateTodo = (data) => {
 };
 
 function handleCheck(completed) {
-  todocounter.updateCompleted(completed);
+  todoCounter.updateCompleted(completed);
 }
 
 function handleDelete(completed) {
-  todocounter.updateTotal(false);
+  todoCounter.updateTotal(false);
   if (completed) {
     todocounter.updateCompleted(false);
   }
