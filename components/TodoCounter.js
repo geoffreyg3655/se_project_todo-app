@@ -8,15 +8,17 @@ class TodoCounter {
 
   updateCompleted = (increment) => {
     this._completed += increment ? 1 : -1;
+    this._completed = Math.max(0, this._completed);
     this._updateText();
   };
 
   updateTotal = (increment) => {
     this._total += increment ? 1 : -1;
+    this._total = Math.max(0, this._total);
+    this._completed = Math.min(this._completed, this._total);
     this._updateText();
   };
 
-  // Call the method to update the text content
   _updateText() {
     this._element.textContent = `Showing ${this._completed} out of ${this._total} completed`;
   }
